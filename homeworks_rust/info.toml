@@ -6,7 +6,7 @@ name = "variables1"
 path = "homeworks/homework5/variables/variables1.rs"
 mode = "compile"
 hint = """
-Hint: The declaration on line 12 is missing a keyword that is needed in Rust
+Hint: The declaration on line 8 is missing a keyword that is needed in Rust
 to create a new variable binding."""
 
 [[exercises]]
@@ -27,20 +27,21 @@ name = "variables3"
 path = "homeworks/homework5/variables/variables3.rs"
 mode = "compile"
 hint = """
-In Rust, variable bindings are immutable by default. But here we're trying
-to reassign a different value to x! There's a keyword we can use to make
-a variable binding mutable instead."""
+Oops! In this exercise, we have a variable binding that we've created on
+line 7, and we're trying to use it on line 8, but we haven't given it a
+value. We can't print out something that isn't there; try giving x a value!
+This is an error that can cause bugs that's very easy to make in any
+programming language -- thankfully the Rust compiler has caught this for us!"""
+
 
 [[exercises]]
 name = "variables4"
 path = "homeworks/homework5/variables/variables4.rs"
 mode = "compile"
 hint = """
-Oops! In this exercise, we have a variable binding that we've created on
-line 7, and we're trying to use it on line 8, but we haven't given it a
-value. We can't print out something that isn't there; try giving x a value!
-This is an error that can cause bugs that's very easy to make in any
-programming language -- thankfully the Rust compiler has caught this for us!"""
+In Rust, variable bindings are immutable by default. But here we're trying
+to reassign a different value to x! There's a keyword we can use to make
+a variable binding mutable instead."""
 
 [[exercises]]
 name = "variables5"
@@ -143,7 +144,7 @@ path = "homeworks/homework5/if/if2.rs"
 mode = "test"
 hint = """
 For that first compiler error, it's important in Rust that each conditional
-block return the same type! To get the tests passing, you will need a couple
+block returns the same type! To get the tests passing, you will need a couple
 conditions checking different input values."""
 
 
@@ -437,11 +438,11 @@ name = "strings1"
 path = "homeworks/homework5/strings/strings1.rs"
 mode = "compile"
 hint = """
-The `current_favorite_color` function is currently returning a string slice with the `'static`
+The `current_favorite_course` function is currently returning a string slice with the `'static`
 lifetime. We know this because the data of the string lives in our code itself -- it doesn't
 come from a file or user input or another program -- so it will live as long as our program
 lives. But it is still a string slice. There's one way to create a `String` by converting a
-string slice covered in the Strings chapter of the book, and another way that uses the `From`
+string slice covered in the Strings chapter of the book, and another way that uses the `from`
 trait."""
 
 [[exercises]]
