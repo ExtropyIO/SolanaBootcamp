@@ -1,0 +1,15 @@
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# [dependencies]
+
+
+[workspace]
+members = [
+	"example1-helloworld/rust",
+	"example2-counter/rust",
+	"example3-multifunc/rust",
+	"example4-cpi/rust",
+	"example5-compute/rust",	
+	"example6-pda/rust",
+	"example7-access/rust",	
+]
