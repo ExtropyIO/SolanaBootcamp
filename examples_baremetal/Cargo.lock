@@ -9,17 +9,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3"
 
 [[package]]
-name = "access"
-version = "0.0.1"
-dependencies = [
- "borsh",
- "borsh-derive",
- "solana-program",
- "solana-program-test",
- "solana-sdk",
-]
-
-[[package]]
 name = "addr2line"
 version = "0.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -260,12 +249,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "bytemuck"
-version = "1.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0e851ca7c24871e7336801608a4797d7376545b6928a10d32d75685687141ead"
-
-[[package]]
 name = "byteorder"
 version = "1.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -376,17 +359,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "compute"
-version = "0.0.1"
-dependencies = [
- "borsh",
- "borsh-derive",
- "solana-program",
- "solana-program-test",
- "solana-sdk",
-]
-
-[[package]]
 name = "constant_time_eq"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -394,17 +366,6 @@ checksum = "245097e9a4535ee1e3e3931fcfcd55a796a44c643e8596ff6566d68f09b87bbc"
 
 [[package]]
 name = "counter"
-version = "0.0.1"
-dependencies = [
- "borsh",
- "borsh-derive",
- "solana-program",
- "solana-program-test",
- "solana-sdk",
-]
-
-[[package]]
-name = "cpi"
 version = "0.0.1"
 dependencies = [
  "borsh",
@@ -1507,17 +1468,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "multifunc"
-version = "0.0.1"
-dependencies = [
- "borsh",
- "borsh-derive",
- "solana-program",
- "solana-program-test",
- "solana-sdk",
-]
-
-[[package]]
 name = "net2"
 version = "0.2.37"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1689,15 +1639,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b3b8c0d71734018084da0c0354193a5edfb81b20d2d57a92c5b154aefc554a4a"
 dependencies = [
  "crypto-mac 0.10.1",
-]
-
-[[package]]
-name = "pda"
-version = "0.1.0"
-dependencies = [
- "borsh",
- "bytemuck",
- "solana-program",
 ]
 
 [[package]]

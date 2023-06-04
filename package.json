@@ -1,0 +1,55 @@
+{
+    "name": "solana-course",
+    "version": "0.0.1",
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "scripts": {
+        "start-local-cluster": "solana-test-validator --reset",
+        "start-with-test-validator": "start-server-and-test 'solana-test-validator --reset --quiet' http://localhost:8899/health start",
+        "lint": "eslint --ext .ts src/client/* && prettier --check \"src/client/**/*.ts\"",
+        "lint:fix": "eslint --ext .ts src/client/* --fix && prettier --write \"src/client/**/*.ts\"",
+        "clean": "npm run clean:rust",
+        "build": "cargo build-bpf --workspace --manifest-path=./examples_baremetal/Cargo.toml",
+        "deploy:1": "solana program deploy ./examples_baremetal/target/deploy/helloworld.so",
+        "call:1": "ts-node examples_baremetal/example1-helloworld/client/main.ts",
+        "deploy:2": "solana program deploy ./examples_baremetal/target/deploy/counter.so",
+        "call:2": "ts-node examples_baremetal/example2-counter/client/main.ts",
+        "test:rust": "cargo test-bpf --manifest-path=./src/rust/Cargo.toml",
+        "deploy:t1": "solana program deploy ./examples_baremetal/target/deploy/sol_stream_program.so",
+        "pretty": "prettier --write '{,src/**/}*.ts'"
+    },
+    "dependencies": {
+        "@solana/web3.js": "^1.33.0",
+        "borsh": "^0.7.0",
+        "fs-extra": "^10.1.0",
+        "mz": "^2.7.0",
+        "yaml": "^1.10.2"
+    },
+    "devDependencies": {
+        "@tsconfig/recommended": "^1.0.1",
+        "@types/eslint": "^8.2.2",
+        "@types/eslint-plugin-prettier": "^3.1.0",
+        "@types/fs-extra": "^9.0.13",
+        "@types/mz": "^2.7.2",
+        "@types/prettier": "^2.1.5",
+        "@types/yaml": "^1.9.7",
+        "@typescript-eslint/eslint-plugin": "^4.6.0",
+        "@typescript-eslint/parser": "^4.6.0",
+        "eslint": "^7.12.1",
+        "eslint-config-prettier": "^6.15.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "prettier": "^2.1.2",
+        "start-server-and-test": "^1.11.6",
+        "ts-node": "^10.0.0",
+        "typescript": "^4.0.5"
+    },
+    "engines": {
+        "node": ">=14.0.0"
+    }
+}
