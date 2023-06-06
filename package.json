@@ -20,6 +20,8 @@
         "call:1": "ts-node examples_baremetal/example1-helloworld/client/main.ts",
         "deploy:2": "solana program deploy ./examples_baremetal/target/deploy/counter.so",
         "call:2": "ts-node examples_baremetal/example2-counter/client/main.ts",
+        "deploy:3": "solana program deploy ./examples_baremetal/target/deploy/multifunc.so",
+        "call:3": "ts-node examples_baremetal/example3-multifunc/client/main.ts",
         "test:rust": "cargo test-bpf --manifest-path=./src/rust/Cargo.toml",
         "deploy:t1": "solana program deploy ./examples_baremetal/target/deploy/sol_stream_program.so",
         "pretty": "prettier --write '{,src/**/}*.ts'"
