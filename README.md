@@ -1,7 +1,5 @@
 # SolanaBootcamp
 
-# SolanaBootcamp
-
 > **Note**: We're expecting you have both [`rust`](https://www.rust-lang.org/tools/install) and [`solana cli`](https://docs.solana.com/cli/install-solana-cli-tools) installed. If you are running on the MacOS M1 and encounter issues, we suggest **NOT** to use brew to install rust, instead use curl or install from source.
 
 1. Install and build - creates binary files for each of the examples in `examples_baremtal/` creates inside `target/`
