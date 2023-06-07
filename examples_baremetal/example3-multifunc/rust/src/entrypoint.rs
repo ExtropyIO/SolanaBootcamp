@@ -4,7 +4,8 @@ use solana_program::{
 };
 
 // Declare and export the program's entrypoint
-entrypoint!(process_instruction);
+// TODO set the correct entrypoint
+entrypoint!();
 
 // Program entrypoint's implementation
 pub fn process_instruction(
@@ -14,5 +15,6 @@ pub fn process_instruction(
 ) -> ProgramResult {
     msg!("[entrypoint] multifunc example entrypoint");
     // use processor function
-    return Processor::process_program_call(program_id, accounts, instruction_data);
+    // TODO call the correct function in Processor, passing the arguments from this function
+   //  return Processor::
 }

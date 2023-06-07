@@ -13,7 +13,7 @@ impl Instruction {
         // split into first element and the rest [element], [element array]
         let split = input.split_first();
 
-        msg!("[instruction] Splits something");
+        msg!("[instruction] Split");
 
         // process option
         let (function_flag, _rest) = split.ok_or({
@@ -23,16 +23,15 @@ impl Instruction {
 
         msg!("[instruction]Received function flag: {}", function_flag);
 
-        // process function type
-        match function_flag {
-            0 => Ok(Self::FunctionA),
-            1 => Ok(Self::FunctionB),
 
-            _ => {
-                return Err(ProgramError::BorshIoError(
-                    "Invalid function flag".to_string(),
-                ))
-            }
-        }
+        // TODO now that we have unpacked our instructions we will use the function flag
+        // to decide which function to call. 
+        // If the function_flag is 0 pick the enum FunctionA, if it is 1 then FunctionB
+        // otherwise return an error : 
+        //  Err(ProgramError::BorshIoError("Invalid function flag".to_string(),))
+
+
+
+
     }
 }
