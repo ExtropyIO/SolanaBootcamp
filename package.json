@@ -22,6 +22,12 @@
         "call:2": "ts-node examples_baremetal/example2-counter/client/main.ts",
         "deploy:3": "solana program deploy ./examples_baremetal/target/deploy/multifunc.so",
         "call:3": "ts-node examples_baremetal/example3-multifunc/client/main.ts",
+        "deploy:4": "solana program deploy ./examples_baremetal/target/deploy/cpi.so",
+        "call:4": "ts-node examples_baremetal/example4-cpi/client/main.ts",
+        "deploy:5": "solana program deploy ./examples_baremetal/target/deploy/compute.so",
+        "call:5": "ts-node examples_baremetal/example5-compute/client/main.ts",
+        "deploy:6": "solana program deploy ./examples_baremetal/target/deploy/pda.so",
+        "call:6": "ts-node examples_baremetal/example6-pda/client/main.ts",
         "test:rust": "cargo test-bpf --manifest-path=./src/rust/Cargo.toml",
         "deploy:t1": "solana program deploy ./examples_baremetal/target/deploy/sol_stream_program.so",
         "pretty": "prettier --write '{,src/**/}*.ts'"
