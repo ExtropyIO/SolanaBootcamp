@@ -11,5 +11,5 @@ members = [
 	"example4-cpi/rust",
 	"example5-compute/rust",	
 	"example6-pda/rust",
-	"example7-access/rust",	
+#	"example7-access/rust",	
 ]
