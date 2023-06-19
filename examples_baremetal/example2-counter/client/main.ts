@@ -96,7 +96,7 @@ export async function deployGreetAccount(
       new GreetingAccount()
     ).length;
 
-    console.log(`Account {greetedPubkey} not deployed, deploying now`);
+    console.log(`Account ${greetedPubkey} not deployed, deploying now`);
     console.log(
       "Creating account",
       greetedPubkey.toBase58(),
