@@ -7,7 +7,6 @@
 members = [
 	"example1-helloworld/rust",
 	"example2-counter/rust",
-	"example3-multifunc/rust",
 	"example4-cpi/rust",
 	"example5-compute/rust",	
 	"example6-pda/rust",
