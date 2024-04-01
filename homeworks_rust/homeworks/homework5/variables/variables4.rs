@@ -1,11 +1,9 @@
 // variables4.rs
 // Make me compile! Execute the command `rustlings hint variables4` if you want a hint :)
 
-// I AM NOT DONE
-
 fn main() {
-    let x = 3;
+    let mut x = 3; // make x mutable by adding "mut"
     println!("Number {}", x);
-    x = 5; // don't change this line
+    x = 5; // this is now allowed because x is mutable
     println!("Number {}", x);
 }

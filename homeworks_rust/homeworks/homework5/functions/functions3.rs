@@ -1,10 +1,9 @@
 // functions3.rs
 // Make me compile! Execute `rustlings hint functions3` for hints :)
 
-// I AM NOT DONE
-
 fn main() {
-    call_this();
+    let num = 5; // Example: Call `call_this` with 5
+    call_this(num);
 }
 
 fn call_this(num: u32) {
