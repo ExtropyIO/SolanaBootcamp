@@ -7,7 +7,8 @@ use notify::DebouncedEvent;
 use notify::{RecommendedWatcher, RecursiveMode, Watcher};
 use std::ffi::OsStr;
 use std::fs;
-use std::io::{self, prelude::*};
+// use std::io::{self, prelude::*};
+use std::io;
 use std::path::Path;
 use std::process::{Command, Stdio};
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -240,8 +241,15 @@ fn homework(exercises: &[Exercise], verbose: bool, homework_number: String) -> n
     let to_owned_hint = |t: &Exercise| t.hint.to_owned();
 
     // Check if directory exists
-    let b = Path::new(&homework_path).is_dir();   //.is_file();
-    
+
+    if Path::new(&homework_path).is_dir() {
+        println!("Info: '{}' is a directory.", homework_path);
+        // This is where you'd add any operations that should be performed now that you've confirmed the path is a directory.
+    } else {
+        eprintln!("Error: '{}' is not a directory.", homework_path);
+        // Handle the error case, perhaps by exiting the function or performing alternative operations.
+    }
+
     // Filter against what's in the dirctory for number 1
     let paths = fs::read_dir(homework_path).expect("Can't find homework. Have you run the wrong homework number?");
 
