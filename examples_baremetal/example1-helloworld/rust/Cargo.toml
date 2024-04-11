@@ -12,7 +12,9 @@ edition = "2018"
 no-entrypoint = []
 
 [dependencies]
-solana-program = "=1.7.9"
+borsh = "0.9.1"
+borsh-derive = "0.9.1"
+solana-program = "1.18.10"
 
 [lib]
 name = "helloworld"
