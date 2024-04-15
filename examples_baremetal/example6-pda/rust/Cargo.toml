@@ -6,9 +6,10 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-borsh = "0.9.1"
 bytemuck = "1.7.2"
-solana-program = "1.7.9"
+borsh = "0.9.1"
+borsh-derive = "0.9.1"
+solana-program = "1.18.10"
 
 [lib]
 crate-type = ["cdylib", "lib"]

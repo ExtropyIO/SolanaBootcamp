@@ -1,7 +1,6 @@
 use borsh::{BorshDeserialize, BorshSerialize};
 use solana_program::{
     account_info::{next_account_info, AccountInfo},
-    borsh::try_from_slice_unchecked,
     msg,
     program::invoke_signed,
     program_error::ProgramError,
@@ -90,7 +89,7 @@ pub fn write_pda(
     //
 
     // create struct from data under account using the template
-    let mut word_account = try_from_slice_unchecked::<StringAccount>(&account.data.borrow())?;
+    let mut word_account: StringAccount = BorshDeserialize::deserialize(&mut &account.data.borrow()[..])?;
 
     msg!(
         "Will attempt to serialise \"{:?}\" to account {:?}",
