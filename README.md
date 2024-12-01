@@ -15,19 +15,19 @@
    solana config set --url localhost
    ```
 
-1. Run in seperate terminal window. This will spin up local solana cluster for you with RPC enpoint defaulted to `localhost:8899`, same as running `solana-test-validator --reset`
+1. Run in separate terminal window. This will spin up local solana cluster for you with RPC endpoint defaulted to `localhost:8899`, same as running `solana-test-validator --reset`
 
    ```zsh
    npm run start-local-cluster
    ```
 
-1. Monitor the logs in seperate window by running
+1. Monitor the logs in separate window by running
 
    ```zsh
     solana logs
    ```
 
-## Commans for each example
+## Commands for each example
 
 1. For each example run the following commands. The program would be deployed to the network specified in solana config
 

@@ -12,6 +12,8 @@ import {
   Connection,
   PublicKey,
   LAMPORTS_PER_SOL,
+  Message,
+  MessageArgs
 } from "@solana/web3.js";
 
 /**
@@ -34,10 +36,27 @@ export async function getBalance(
   return [startingBalanceSOL, lamports];
 }
 
-export async function feesEstimate(connection: Connection): Promise<number> {
-  const { feeCalculator } = await connection.getRecentBlockhash();
+export async function feesEstimate(connection: Connection, payer: Keypair): Promise<number> {
+  const { blockhash } = await connection.getLatestBlockhash();
 
-  let fees = feeCalculator.lamportsPerSignature * 100;
+  const messageArgs: MessageArgs = {
+    recentBlockhash: blockhash,
+    instructions: [],
+    header: {
+      numRequiredSignatures: 1,
+      numReadonlySignedAccounts: 0,
+      numReadonlyUnsignedAccounts: 0,
+    },
+    accountKeys: [payer.publicKey],
+  }
+
+  const message = new Message(messageArgs);
+  const feeCalculator = await connection.getFeeForMessage(message);
+
+  if (feeCalculator.value === null) {
+    throw new Error("Failed to retrieve fee calculator value");
+  }
+  let fees = feeCalculator.value * 100;
 
   return fees;
 }
@@ -87,7 +106,7 @@ export async function establishEnoughSol(
 ) {
   let fees = 0;
   // Calculate the cost of sending transactions
-  fees += await feesEstimate(connection);
+  fees += await feesEstimate(connection, payer);
 
   let [_, lamports] = await getBalance(connection, payer);
   if (lamports < fees) {
