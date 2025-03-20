@@ -15,7 +15,7 @@
         "lint": "eslint --ext .ts src/client/* && prettier --check \"src/client/**/*.ts\"",
         "lint:fix": "eslint --ext .ts src/client/* --fix && prettier --write \"src/client/**/*.ts\"",
         "clean": "npm run clean:rust",
-        "build": "cargo build-bpf --workspace --manifest-path=./examples_baremetal/Cargo.toml",
+        "build": "cargo build-sbf --workspace --manifest-path=./examples_baremetal/Cargo.toml",
         "deploy:1": "solana program deploy ./examples_baremetal/target/deploy/helloworld.so",
         "call:1": "ts-node examples_baremetal/example1-helloworld/client/main.ts",
         "deploy:2": "solana program deploy ./examples_baremetal/target/deploy/counter.so",
@@ -28,7 +28,7 @@
         "call:5": "ts-node examples_baremetal/example5-compute/client/main.ts",
         "deploy:6": "solana program deploy ./examples_baremetal/target/deploy/pda.so",
         "call:6": "ts-node examples_baremetal/example6-pda/client/main.ts",
-        "test:rust": "cargo test-bpf --manifest-path=./src/rust/Cargo.toml",
+        "test:rust": "cargo test-sbf --manifest-path=./src/rust/Cargo.toml",
         "deploy:t1": "solana program deploy ./examples_baremetal/target/deploy/sol_stream_program.so",
         "pretty": "prettier --write '{,src/**/}*.ts'"
     },
