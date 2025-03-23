@@ -1,0 +1,46 @@
+tasks:
+  - name: Setup (Install Solana CLI and Rust)
+    init: |
+      # Install Solana CLI (adjust version as needed)
+      sh -c "$(curl -sSfL https://release.solana.com/v1.17.0/install)"  # Use the correct version!
+      export PATH="/workspace/.local/share/solana/install/active_release/bin:$PATH"
+
+      # Set up Rust
+      curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+      export PATH="/workspace/.cargo/bin:$PATH"
+    command: |
+      echo "Solana CLI and Rust are installed. Run 'cargo build-sbf --workspace --manifest-path=./examples_baremetal/Cargo.toml' to build."
+
+  - name: Build Solana Program (Manual)
+    command: |
+      # Build command (run this manually)
+      if [ -f ./examples_baremetal/Cargo.toml ]; then
+        cargo build-sbf --workspace --manifest-path=./examples_baremetal/Cargo.toml
+      else
+        echo "Error: Cargo.toml not found in ./examples_baremetal. Navigate to the correct directory."
+      fi
+      echo "Build complete (or skipped if Cargo.toml not found)."
+
+vscode:
+  extensions:
+    - rust-lang.rust-analyzer
+    - serayuzgur.crates
+    - vadimcn.vscode-lldb
+    - ms-vscode.makefile-tools
+
+ports:
+  - port: 8899  # Example port, if your program uses it
+    onOpen: ignore
+  - port: 8900
+    onOpen: ignore
+  - port: 9000
+    onOpen: ignore
+
+github:
+  prebuilds:
+    main: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: true
+    addBadge: true
+    addComment: true
